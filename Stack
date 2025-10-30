@@ -1,0 +1,18 @@
+package Stack;
+import java.util.Stack;
+public class P1 {
+    public static void main(String[] args) {
+        Stack<Integer> a=new Stack<>();
+        a.push(2);
+        a.push(7);
+        a.push(8);
+        a.push(9);
+        a.push(10);
+        System.out.println(a.pop());
+        System.out.println(a.pop());
+        System.out.println(a.pop());
+        System.out.println(a.pop());
+        System.out.println(a.pop());
+
+    }
+}
