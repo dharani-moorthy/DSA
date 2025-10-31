@@ -1,0 +1,34 @@
+package Stack;
+import java.util.Stack;
+//Valid Parentheses in an Expression
+/*
+Input: s = "[{()}]"
+Output: true
+Explanation:  All the brackets are well-formed.
+
+Input:  s = "([{]})"
+Output: false
+Explanation: The expression is not balanced because there is a closing ']' before the closing '}'.
+ */
+public class P2 {
+    public static void main(String[]args){
+        String s= "[{()}]";
+        System.out.println(isValid(s)?"true":"false");
+    }
+    public  static  boolean isValid(String s) {
+        Stack<Character> a = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '{' || c == '[' ){
+                a.push(c);
+            }else if(c == ')' || c == '}' || c == ']') {
+                if (a.isEmpty()) return false;
+                char d = a.peek();
+                if (c == ')' && d != '(' || c == '}' && d != '{' || c == ']' && d != '[') {
+                    return false;
+                }
+                a.pop();
+            }
+        }
+        return a.isEmpty();
+    }
+}
